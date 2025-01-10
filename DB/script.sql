@@ -17,3 +17,11 @@ CREATE TABLE room (
 	FOREIGN KEY (tarif_id) REFERENCES tarif(tarif_id)
 );
 
+CREATE TABLE reservation (
+    reservation_id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    number INT(11),
+    type ENUM('king','double','suite','single'),
+    availability tinyint(1),
+    tarif_id int ,
+	FOREIGN KEY (tarif_id) REFERENCES tarif(tarif_id)
+);
